@@ -1,3 +1,5 @@
+Forked and modified from [alehaa/nginx-fancyindex-flat-theme](https://github.com/alehaa/nginx-fancyindex-flat-theme/).
+
 # Flat theme for nginx's fancyindex module
 
 [![](https://img.shields.io/github/issues-raw/alehaa/nginx-fancyindex-flat-theme.svg?style=flat-square)](https://github.com/alehaa/nginx-fancyindex-flat-theme/issues)
