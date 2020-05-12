@@ -225,11 +225,6 @@ function generateList()
    * single remaining cell containig the filename. */
   list.tHead.children[0].classList.add('d-none', 'd-md-table-row');
 
-  /* If we're in a subdirectory, remove the 'Parent Directory' row, as the
-   * navigation is covered by the breadcrumbs. */
-  if (window.location.pathname != '/')
-    list.deleteRow(1);
-
   /* Iterate over all rows (including the thead) to add individual classes for
    * each cell or adding new cells. */
   for (var i = 0, row; row = list.rows[i]; i++)
