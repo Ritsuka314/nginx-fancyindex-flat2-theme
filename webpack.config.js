@@ -20,8 +20,8 @@ module.exports = {
     main: './layout/main.js'
   },
   output: {
-    path: path.resolve(__dirname,'build'),
-    publicPath: "build/"
+    path: path.resolve(__dirname,'build'), // output to `build`
+    publicPath: "." // link everything relative to `build`
   },
   module: {
     rules: [
