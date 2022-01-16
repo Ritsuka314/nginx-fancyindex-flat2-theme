@@ -33,7 +33,7 @@
  *  2018 Alexander Haase <ahaase@alexhaase.de>
  */
 
-import fileIcons from 'file-icons-js';
+import * as fileIcons from "file-icons-js";
 import 'file-icons-js/css/style.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
