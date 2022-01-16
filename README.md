@@ -16,9 +16,7 @@ Instead of using an external application, this gives us the ability to use use
 just the webservers capabilities to generate beautiful directory listings.
 
 This theme provides a simple, flat interface based on
-[Bootstrap 4](https://getbootstrap.com), [Font Awesome](https://fontawesome.com)
-and (for easy navigation in galleries)
-[lightbox2](http://lokeshdhakar.com/projects/lightbox2/). In combination with
+[Bootstrap 4](https://getbootstrap.com), and [Font Awesome](https://fontawesome.com). In combination with
 the browser's preview capability, accessing the majority of files should be
 possible, giving the user easy access without a single line of server-side
 dynamic code.
