@@ -56,7 +56,8 @@ window.generateBreadcrumbs = function ()
     return '<li class="breadcrumb-item' +
            (active ? ' active aria-current="page' : '') + '">' +
            (active ? '' : '<a href="' + url + '">') + name +
-           (active ? '' : '</a>');
+           (active ? '' : '</a>') +
+           '</li>';
   }
 
   /* Get the path of the current directory and split it into the list of paths.
@@ -67,16 +68,34 @@ window.generateBreadcrumbs = function ()
   /* Iterate over the breadcrumbs and generate a link for each crumb. The home
    * directory will have the special name 'Home' and the current directory will
    * not be a link, but just plain text. */
-  var nav = '';
+  var nav  = [];
+  var url  = '';
   var path = '';
   for (var i = 0; i < crumbs.length; i++)
     {
+      url  += crumbs[i] + '/';
+      crumbs[i] = decodeURIComponent(crumbs[i]);
       path += crumbs[i] + '/';
-      nav += crumb((i == 0) ? 'Home' : decodeURIComponent(crumbs[i]), path,
-                   (i == crumbs.length - 1));
+      nav  += crumb(  (i === 0) ? 'Home' : crumbs[i],
+                      url,
+                      (i === crumbs.length - 1));
     }
 
   /* Update the breadcrumbs element's contents with the breadcrumbs navigation
    * generated above. */
-  document.getElementById('breadcrumbs').innerHTML = nav;
+  document.getElementById('breadcrumbs').innerHTML += nav;
+
+  // needs to be done after altering innerHTML above.
+  document.getElementById('copy-path').addEventListener('click' , ()=> {
+    navigator.clipboard.writeText(path).then(
+      function() {
+        /* clipboard successfully set */
+        console.log('Success! The text was copied to your clipboard')
+      },
+      function() {
+        /* clipboard write failed */
+        console.log('Opps! Your browser does not support the Clipboard API')
+      }
+    )
+  })
 }
